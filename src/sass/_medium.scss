@@ -1,0 +1,54 @@
+@media (min-width: 768px) {
+	header {
+		background-image: url('/src/img/hero-big.jpeg');
+		.nav {
+			&__button {
+				display: none;
+			}
+			&__list {
+				display: flex;
+			}
+		}
+		.header__txt {
+			small {
+				font-size: 3rem;
+				font-weight: 300;
+			}
+			h1 {
+				font-size: 5rem;
+				line-height: 8rem;
+				letter-spacing: 2px;
+			}
+		}
+	}
+	.about {
+		&__card {
+			display: flex;
+		}
+		&__img {
+			width: 100%;
+			&-img {
+				width: 100%;
+				object-fit: fill;
+			}
+		}
+		// &__txt {
+		// 	width: 100%;
+		// 	h2 {
+		// 		padding: 0.8em 4em;
+		// 		font-size: 5rem;
+		// 		font-weight: 400;
+		// 	}
+		// }
+		.about__hero {
+			background-image: url('../img/two-big.jpeg');
+			&-txt {
+				h2 {
+					padding: 0.8em 4em;
+					font-size: 3rem;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@media (min-width: 992px) {
+	.about {
+		&__card {
+			display: flex;
+			flex-direction: row;
+		}
+		&__img {
+			width: 50%;
+		}
+		&__txt {
+			width: 50%;
+		}
+		.about__hero {
+			&-txt {
+				h2 {
+					font-size: 5rem;
+				}
+			}
+		}
+	}
+}
