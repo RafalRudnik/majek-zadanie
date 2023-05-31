@@ -32,6 +32,11 @@
 				object-fit: fill;
 			}
 		}
+		&__txt {
+			p {
+				font-size: 1.8rem;
+			}
+		}
 		// &__txt {
 		// 	width: 100%;
 		// 	h2 {
@@ -49,6 +54,11 @@
 					font-weight: 400;
 				}
 			}
+		}
+	}
+	footer {
+		.footer__info {
+			display: flex;
 		}
 	}
 }

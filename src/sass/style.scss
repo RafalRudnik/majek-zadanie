@@ -13,6 +13,7 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	scroll-padding-top: 100px;
 }
 
 body {
@@ -105,6 +106,10 @@ header {
 				color: $white;
 				background-color: $black;
 			}
+		}
+		.activeLink {
+			color: $white;
+			background-color: $black;
 		}
 		&__button {
 			position: absolute;
@@ -242,7 +247,7 @@ header {
 			margin-bottom: 1em;
 		}
 		p {
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			font-weight: 200;
 			line-height: 4rem;
 			a {
@@ -283,12 +288,42 @@ header {
 }
 
 footer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100px;
+	min-height: 200px;
 	font-size: 1.4rem;
 	font-weight: 200;
+	background-color: $grey;
+	.footer__card {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin: 3em 0em;
+		padding: 0em 1em;
+	}
+	.nav__logo {
+		display: flex;
+		align-self: flex-start;
+		gap: 0.5em;
+		font-size: 4rem;
+		font-weight: 400;
+	}
+	.footer__info {
+		display: none;
+		gap: 4em;
+		&-list {
+			list-style: none;
+		}
+		&-item {
+			padding: 1em;
+			h3 {
+				font-size: 2rem;
+			}
+		}
+	}
+	.footer__txt {
+		text-align: center;
+		padding: 1em;
+	}
 }
 
 @import './medium';
