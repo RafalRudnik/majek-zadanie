@@ -14,8 +14,8 @@
 </head>
 
 <body>
+    <!-- @include 'nav.kit' -->
     <header>
-        <!-- @include 'nav.kit' -->
         <div class="header__txt">
             <small>Forest Group</small>
             <h1>Najpiękniejszy park w Twojej okolicy!</h1>
@@ -51,7 +51,58 @@
     </section>
 
     <section class="offer" id="offer">
+        <div class="wrapper">
+            <div class="section__header">
+                <h2>oferta</h2>
+            </div>
+            <div class="offer__cards">
+                <div class="offer__card">
+                    <p class="offer__card-title">Demo</p>
+                    <p class="offer__card-price">$0</p>
+                    <ul>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li class="offer__unsupported"><i class="ti ti-minus"></i>opacja poza pakietem</li>
+                        <li class="offer__unsupported"><i class="ti ti-minus"></i>opacja poza pakietem</li>
+                        <li class="offer__unsupported"><i class="ti ti-minus"></i>opacja poza pakietem</li>
+                    </ul>
+                    <button class="offer__button">Wybierz</button>
+                </div>
+                <div class="offer__card">
+                    <p class="offer__card-title">Standard</p>
+                    <p class="offer__card-price">$99</p>
+                    <ul>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li class="offer__unsupported"><i class="ti ti-minus"></i>opacja poza pakietem</li>
+                        <li class="offer__unsupported"><i class="ti ti-minus"></i>opacja poza pakietem</li>
+                    </ul>
+                    <button class="offer__button offer__button--active">Wybierz</button>
+                </div>
+                <div class="offer__card">
+                    <p class="offer__card-title">Premium</p>
+                    <p class="offer__card-price">$299</p>
+                    <ul>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
+                        <li><i class="ti ti-check"></i>opcja w pakiecie</li>
 
+                    </ul>
+                    <button class="offer__button">Wybierz</button>
+                </div>
+            </div>
+
+            <div class="offer__more">
+                <div class="offer__more-txt">
+                    <i class="ti ti-arrow-down-right"></i>
+                    <a href="/offer.html">Więcej ofert...</a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- @include 'footer.kit' -->

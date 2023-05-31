@@ -18,4 +18,24 @@
 			}
 		}
 	}
+	.offer {
+		&__cards {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			padding: 1em;
+		}
+		&__card {
+			height: 100%;
+		}
+		&__more-txt {
+			i {
+				position: absolute;
+				right: 17%;
+				top: -100%;
+				font-size: 5rem;
+				animation: wobble-hor-bottom 4s 0s infinite linear both;
+			}
+		}
+	}
 }

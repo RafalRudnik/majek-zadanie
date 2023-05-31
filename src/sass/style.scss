@@ -22,10 +22,12 @@ body {
 }
 
 a {
+	color: $black;
 	text-decoration: none;
 }
 
 .wrapper {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -45,7 +47,152 @@ a {
 		font-weight: 200;
 	}
 }
+// NAVIGATION =============================
+
+.nav {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	padding: 0em 1em;
+	background-color: $white;
+	z-index: 100;
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		max-width: 1200px;
+	}
+	&__logo {
+		display: flex;
+		gap: 0.5em;
+		font-size: 4rem;
+	}
+	&__list {
+		display: none;
+		list-style: none;
+		align-items: center;
+		justify-items: center;
+		height: 100%;
+		font-size: 2rem;
+	}
+	&__item {
+		display: flex;
+		height: 100%;
+		background-color: $white;
+		z-index: 80;
+	}
+	&__link {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 0.8em;
+		width: 100%;
+		height: 100%;
+		color: $black;
+		transition: background-color 0.5s, color 0.5s;
+		&:hover {
+			color: $white;
+			background-color: $black;
+		}
+	}
+	.activeLink {
+		color: $white;
+		background-color: $black;
+		z-index: 80;
+	}
+	&__button {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		top: 10px;
+		right: 10px;
+		width: 50px;
+		height: 50px;
+		border: 1px solid $grey;
+		border-radius: 8px;
+		overflow: hidden;
+		transition: background-color 0.3s;
+		cursor: pointer;
+		z-index: 300;
+		span {
+			position: relative;
+			width: 80%;
+			height: 100%;
+			&::after {
+				position: absolute;
+				content: '';
+				top: 33%;
+				width: 100%;
+				height: 2px;
+				background-color: $black;
+				transition: background-color 0.3s;
+			}
+			&::before {
+				position: absolute;
+				content: '';
+				top: 66%;
+				width: 100%;
+				height: 2px;
+				background-color: $black;
+				transition: background-color 0.3s;
+			}
+		}
+		&:hover {
+			background-color: $black;
+		}
+		&:hover span::after {
+			background-color: $white;
+		}
+		&:hover span::before {
+			background-color: $white;
+		}
+		.spanActive {
+			&::after {
+				top: 50%;
+				animation: burgerAnim 1s 0s both;
+			}
+			&::before {
+				top: 50%;
+				animation: burgerAnimBack 1s 0s both;
+			}
+		}
+	}
+}
+.nav__list-mobile {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+	font-size: 3rem;
+	width: 100%;
+	background-color: $white;
+	height: 100vh;
+	z-index: 80;
+	transform: translateX(200%);
+	z-index: 80;
+}
+.nav__item-mobile {
+	padding: 1em;
+}
+.showMenu {
+	animation: navAnim 1s 0s linear both;
+}
+.hideMenu {
+	animation: navAnimHide 1s 0s linear both;
+}
+
 // HEADER =====================
+
+
 
 header {
 	position: relative;
@@ -58,135 +205,6 @@ header {
 	background-size: cover;
 	overflow: hidden;
 	z-index: 1;
-	.nav {
-		position: fixed;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100px;
-		padding: 0em 1em;
-		background-color: $white;
-		z-index: 100;
-		&__block {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-			max-width: 1200px;
-		}
-		&__logo {
-			display: flex;
-			gap: 0.5em;
-			font-size: 4rem;
-		}
-		&__list {
-			display: none;
-			list-style: none;
-			align-items: center;
-			justify-items: center;
-			height: 100%;
-			font-size: 2rem;
-		}
-		&__item {
-			display: flex;
-			height: 100%;
-		}
-		&__link {
-			position: relative;
-			display: flex;
-			align-items: center;
-			padding: 0.8em;
-			width: 100%;
-			height: 100%;
-			color: $black;
-			transition: background-color 0.5s, color 0.5s;
-			&:hover {
-				color: $white;
-				background-color: $black;
-			}
-		}
-		.activeLink {
-			color: $white;
-			background-color: $black;
-		}
-		&__button {
-			position: absolute;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			top: 10px;
-			right: 10px;
-			width: 50px;
-			height: 50px;
-			border: 1px solid $grey;
-			border-radius: 8px;
-			overflow: hidden;
-			transition: background-color 0.3s;
-			cursor: pointer;
-			z-index: 300;
-			span {
-				position: relative;
-				width: 80%;
-				height: 100%;
-				&::after {
-					position: absolute;
-					content: '';
-					top: 33%;
-					width: 100%;
-					height: 2px;
-					background-color: $black;
-					transition: background-color 0.3s;
-				}
-				&::before {
-					position: absolute;
-					content: '';
-					top: 66%;
-					width: 100%;
-					height: 2px;
-					background-color: $black;
-					transition: background-color 0.3s;
-				}
-			}
-			&:hover {
-				background-color: $black;
-			}
-			&:hover span::after {
-				background-color: $white;
-			}
-			&:hover span::before {
-				background-color: $white;
-			}
-			.spanActive {
-				&::after {
-					top: 50%;
-					animation: burgerAnim 1s 0s both;
-				}
-				&::before {
-					top: 50%;
-					animation: burgerAnimBack 1s 0s both;
-				}
-			}
-		}
-	}
-	.nav__list-mobile {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		list-style: none;
-		font-size: 3rem;
-		width: 100%;
-		background-color: $white;
-		height: 100vh;
-		z-index: 80;
-		transform: translateX(500%);
-	}
-	.nav__item-mobile {
-		padding: 1em;
-	}
 	&::after {
 		position: absolute;
 		content: '';
@@ -196,9 +214,6 @@ header {
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.7);
 		z-index: 0;
-	}
-	.showMenu {
-		animation: navAnim 1s 0s linear both;
 	}
 	.header__txt {
 		position: absolute;
@@ -264,16 +279,6 @@ header {
 		background-position: center;
 		background-size: cover;
 		height: 350px;
-		z-index: 1;
-		&::after {
-			position: absolute;
-			content: '';
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.4);
-		}
 		&-txt {
 			color: $white;
 			border: 1px solid $white;
@@ -284,14 +289,115 @@ header {
 				font-weight: 400;
 			}
 		}
+		&::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.4);
+		}
 	}
 }
+
+// OFFER =======================================
+.offer {
+	margin-bottom: 4em;
+	overflow: hidden;
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 3em;
+		width: 100%;
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 300px;
+		gap: 1em;
+		padding: 2em 3em;
+		border-radius: 8px;
+		box-shadow: 0 0 10px $greyTxt;
+		&-title {
+			font-size: 3rem;
+			font-weight: 200;
+		}
+		&-price {
+			font-size: 4rem;
+		}
+		ul {
+			list-style: none;
+			li {
+				padding: 0.5em 0em;
+				font-weight: 200;
+				i {
+					padding-right: 0.5em;
+				}
+				.ti-check {
+					color: $green;
+					font-weight: bold;
+				}
+			}
+			.offer__unsupported {
+				color: $greyTxt;
+			}
+		}
+	}
+	&__button {
+		width: 70%;
+		padding: 0.7em 2em;
+		border-radius: 8px;
+		border: none;
+		font-size: 1.6rem;
+		letter-spacing: 1px;
+		box-shadow: 0 0 4px $grey;
+		cursor: pointer;
+		&--active {
+			background-color: $green;
+			box-shadow: 0 0 4px $green;
+		}
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	&__more {
+		position: relative;
+		width: 100%;
+		margin: 3em 1em;
+		padding: 1em;
+		text-align: end;
+	}
+	&__more-txt {
+		position: relative;
+		color: $black;
+		i {
+			position: absolute;
+			right: 50%;
+			top: -100%;
+			font-size: 5rem;
+			animation: wobble-hor-bottom 4s 0s infinite linear both;
+		}
+		a {
+			color: $black;
+			font-size: 3rem;
+			font-weight: 200;
+		}
+	}
+}
+
+// FOOTER =====================================
 
 footer {
 	min-height: 200px;
 	font-size: 1.4rem;
 	font-weight: 200;
 	background-color: $grey;
+	overflow: hidden;
 	.footer__card {
 		display: flex;
 		align-items: center;
@@ -322,7 +428,7 @@ footer {
 	}
 	.footer__txt {
 		text-align: center;
-		padding: 1em;
+		padding: 1.5em;
 	}
 }
 

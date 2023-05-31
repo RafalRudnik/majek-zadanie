@@ -1,25 +1,25 @@
 @media (min-width: 768px) {
+	.nav {
+		&__button {
+			display: none;
+		}
+		&__list {
+			display: flex;
+		}
+	}
+	.header__txt {
+		small {
+			font-size: 3rem;
+			font-weight: 300;
+		}
+		h1 {
+			font-size: 5rem;
+			line-height: 8rem;
+			letter-spacing: 2px;
+		}
+	}
 	header {
 		background-image: url('/src/img/hero-big.jpeg');
-		.nav {
-			&__button {
-				display: none;
-			}
-			&__list {
-				display: flex;
-			}
-		}
-		.header__txt {
-			small {
-				font-size: 3rem;
-				font-weight: 300;
-			}
-			h1 {
-				font-size: 5rem;
-				line-height: 8rem;
-				letter-spacing: 2px;
-			}
-		}
 	}
 	.about {
 		&__card {
@@ -56,7 +56,27 @@
 			}
 		}
 	}
+	.offer {
+		&__cards {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			padding: 1em;
+		}
+		&__card {
+			height: 100%;
+		}
+		&__more-txt {
+			i {
+				right: 26%;
+				top: -100%;
+				font-size: 5rem;
+			}
+		}
+	}
+
 	footer {
+		min-height: 350px;
 		.footer__info {
 			display: flex;
 		}
