@@ -12,8 +12,7 @@
 </head>
 
 <body>
-    <header>
-        <nav class="nav">
+    <nav class="nav">
 
     <div class="nav__block">
 
@@ -27,29 +26,59 @@
 
 
         <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__link activeLink">Home</a></li>
-            <li class="nav__item"><a href="#about" class="nav__link">O nas</a></li>
-            <li class="nav__item"><a href="#offer" class="nav__link">Oferta</a></li>
-            <li class="nav__item"><a href="contact.html" class="nav__link">Kontakt</a></li>
+            <li class="nav__item"><a href="/index.html" class="nav__link activeLink">Home</a></li>
         </ul>
 
-        <div class="nav__button">
-            <span></span>
-        </div>
+
 
     </div>
 
 
 
 </nav>
+    <main>
 
-<ul class="nav__list-mobile">
-    <li class="nav__item-mobile"><a href="#" class="nav__link nav__link-mobile">Home</a></li>
-    <li class="nav__item-mobile"><a href="#about" class="nav__link nav__link-mobile">O nas</a></li>
-    <li class="nav__item-mobile"><a href="#offer" class="nav__link nav__link-mobile">Oferta</a></li>
-    <li class="nav__item-mobile"><a href="contact.html" class="nav__link nav__link-mobile">Kontakt</a></li>
-</ul>
-    </header>
+        <section class="contact">
+            <div class="section__header">
+                <h2>kontakt</h2>
+            </div>
+            <div class="wrapper">
+                <div class="contact__card">
+                    <div class="contact__map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10239.593805595492!2d19.8928489!3d50.0881881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1685544452941!5m2!1spl!2spl"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="contact__form">
+                        <form action="mail.php" method="post" class="contact-form">
+
+                            <div class="contact-box">
+                                <label for="name"><i class="ti ti-user"></i> Imię:</label>
+                                <input type="text" id="name" name="name" required placeholder="Twoje imię">
+                            </div>
+                            <div class="contact-box">
+                                <label for="email"><i class="ti ti-mail"></i> Email:</label>
+                                <input type="email" id="email" name="email" required placeholder="Twój adres email">
+                            </div>
+                            <div class="contact-box">
+                                <label for="msg"><i class="ti ti-blockquote"></i> Wiadomość:</label>
+                                <textarea name="msg" id="msg" required rows="10"
+                                    placeholder="Dzień dobry..."></textarea>
+                            </div>
+
+                            <button class="offer__button">Wyślij</button>
+
+                        </form>
+
+                        <p class="msg-status"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 
     <footer>
     <div class="wrapper">

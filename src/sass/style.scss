@@ -192,8 +192,6 @@ a {
 
 // HEADER =====================
 
-
-
 header {
 	position: relative;
 	display: flex;
@@ -224,6 +222,7 @@ header {
 		transform: translateY(-50%);
 		color: $white;
 		z-index: 1;
+		animation: headerAnim 1s 0s both;
 		small {
 			font-size: 2rem;
 			font-weight: 300;
@@ -357,12 +356,13 @@ header {
 		letter-spacing: 1px;
 		box-shadow: 0 0 4px $grey;
 		cursor: pointer;
+		transition: opacity 0.3s;
+		&:hover {
+			opacity: 0.7;
+		}
 		&--active {
 			background-color: $green;
 			box-shadow: 0 0 4px $green;
-		}
-		&:hover {
-			opacity: 0.8;
 		}
 	}
 	&__more {
@@ -386,6 +386,73 @@ header {
 			color: $black;
 			font-size: 3rem;
 			font-weight: 200;
+		}
+	}
+}
+
+.offer_page {
+	min-height: 70vh;
+}
+
+// CONTACT =====================================
+
+.contact {
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3em;
+	.section__header {
+		margin-top: 5em;
+	}
+	&__card {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 2em;
+		margin-top: 10em;
+		padding: 0.5em;
+		width: 100%;
+	}
+	&__map {
+		width: 100%;
+		iframe {
+			width: 100%;
+			object-fit: fill;
+		}
+	}
+	&__form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		form {
+			width: 80%;
+		}
+		.contact-box {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1em;
+			width: 100%;
+			label {
+				padding: 0.5em 0em;
+			}
+			input {
+				border: none;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+			}
+			textarea {
+				resize: vertical;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+			}
+			textarea,
+			input {
+				padding: 0.5em;
+				outline-color: $green;
+			}
+		}
+		.offer__button {
+			width: 50%;
 		}
 	}
 }

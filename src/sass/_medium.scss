@@ -7,19 +7,20 @@
 			display: flex;
 		}
 	}
-	.header__txt {
-		small {
-			font-size: 3rem;
-			font-weight: 300;
-		}
-		h1 {
-			font-size: 5rem;
-			line-height: 8rem;
-			letter-spacing: 2px;
-		}
-	}
+
 	header {
 		background-image: url('/src/img/hero-big.jpeg');
+		.header__txt {
+			small {
+				font-size: 3rem;
+				font-weight: 300;
+			}
+			h1 {
+				font-size: 5rem;
+				line-height: 8rem;
+				letter-spacing: 2px;
+			}
+		}
 	}
 	.about {
 		&__card {
@@ -72,6 +73,18 @@
 				top: -100%;
 				font-size: 5rem;
 			}
+		}
+	}
+
+	.contact {
+		&__card {
+			flex-direction: row;
+		}
+		&__map {
+			width: 50%;
+		}
+		&__form {
+			width: 50%;
 		}
 	}
 
