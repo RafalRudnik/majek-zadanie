@@ -1,5 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
 const burgerBtn = document.querySelector('.nav__button span');
 const navList = document.querySelector('.nav__list-mobile');
 const allLinks = document.querySelectorAll('.nav__link-mobile');
@@ -12,52 +10,15 @@ const allSections = document.querySelectorAll('section');
 const homeLink = document.querySelector('.nav__link-home');
 const aboutLink = document.querySelector('.nav__link-about');
 const offerLink = document.querySelector('.nav__link-offer');
+const contactLink = document.querySelector('.nav__link-contact');
 
 //==========
 
-//GSAP
-let durationDelay = 0.3;
+//LISTS
 
-const about = document.querySelector('.about');
-const offer = document.querySelector('.offer');
-const offerCards = document.querySelectorAll('.offer__card');
-
-gsap.fromTo(
-	about.children,
-	{ y: '+=100', opacity: 0 },
-	{
-		y: 0,
-		opacity: 1,
-		stagger: 0.3,
-		duration: 2,
-		ease: 'easeInOut',
-		scrollTrigger: {
-			trigger: about,
-			start: 'top 50%',
-			// scrub: true,
-		},
-	}
-);
-
-offerCards.forEach((card) => {
-	gsap.fromTo(
-		card,
-		{ y: '+=100', opacity: 0 },
-		{
-			y: 0,
-			opacity: 1,
-			duration: durationDelay,
-			ease: 'easeInOut',
-			scrollTrigger: {
-				trigger: card,
-				start: 'top 70%',
-			},
-		}
-	);
-	durationDelay++;
-});
-
-// =========
+const allLiItems = document.querySelectorAll('.offer__card ul li');
+const checkIcon = '<i class="ti ti-check"></i>';
+const notInculdedIcon = '<i class="ti ti-x"></i>';
 
 const handleBurger = () => {
 	burgerBtn.classList.toggle('spanActive');
@@ -73,10 +34,9 @@ const handleCurrentYear = () => {
 	currentYear.textContent = year;
 };
 
-// const handleScroller = (e) => {
-// 	links.forEach((link) => link.classList.remove('activeLink'));
-// 	e.target.classList.add('activeLink');
-// };
+const handleLinksActiveClass = () => {
+	links.forEach((link) => link.classList.remove('activeLink'));
+};
 
 const handleObserver = () => {
 	const currentSection = window.scrollY;
@@ -85,25 +45,41 @@ const handleObserver = () => {
 			section.classList.contains('about') &&
 			section.offsetTop <= currentSection + 300
 		) {
-			links.forEach((link) => link.classList.remove('activeLink'));
+			handleLinksActiveClass();
 			aboutLink.classList.add('activeLink');
 		} else if (
 			section.classList.contains('offer') &&
 			section.offsetTop <= currentSection + 300
 		) {
-			links.forEach((link) => link.classList.remove('activeLink'));
+			handleLinksActiveClass();
 			offerLink.classList.add('activeLink');
 		} else if (
 			section.classList.contains('about') &&
 			section.offsetTop <= currentSection + 400
 		) {
-			links.forEach((link) => link.classList.remove('activeLink'));
+			handleLinksActiveClass();
 			homeLink.classList.add('activeLink');
+		} else if (
+			section.classList.contains('contact') &&
+			section.offsetTop <= currentSection + 200
+		) {
+			handleLinksActiveClass();
+			contactLink.classList.add('activeLink');
+		}
+	});
+};
+
+const listHandle = () => {
+	allLiItems.forEach((liItem) => {
+		if (liItem.classList.contains('offer__unsupported')) {
+			liItem.innerHTML = notInculdedIcon + 'opacja poza pakietem';
+		} else {
+			liItem.innerHTML = checkIcon + 'opcja w pakiecie';
 		}
 	});
 };
 
 handleCurrentYear();
+listHandle();
 burgerBtn.addEventListener('click', handleBurger);
-// links.forEach((item) => item.addEventListener('click', handleScroller));
 window.addEventListener('scroll', handleObserver);

@@ -177,17 +177,14 @@ a {
 	background-color: $white;
 	height: 100vh;
 	z-index: 80;
-	transform: translateX(200%);
+	transform: translateX(120%);
 	z-index: 80;
 }
 .nav__item-mobile {
 	padding: 1em;
 }
 .showMenu {
-	animation: navAnim 1s 0s linear both;
-}
-.hideMenu {
-	animation: navAnimHide 1s 0s linear both;
+	animation: navAnim 0.5s 0s linear both;
 }
 
 // HEADER =====================
@@ -342,7 +339,7 @@ header {
 					font-weight: bold;
 				}
 			}
-			.offer__unsupported {
+			li.offer__unsupported {
 				color: $greyTxt;
 			}
 		}
@@ -354,7 +351,7 @@ header {
 		border: none;
 		font-size: 1.6rem;
 		letter-spacing: 1px;
-		box-shadow: 0 0 4px $grey;
+		box-shadow: 0 0 4px $greyTxt;
 		cursor: pointer;
 		transition: opacity 0.3s;
 		&:hover {
@@ -386,6 +383,10 @@ header {
 			color: $black;
 			font-size: 3rem;
 			font-weight: 200;
+			transition: color 0.3s;
+		}
+		a:hover {
+			color: $green;
 		}
 	}
 }

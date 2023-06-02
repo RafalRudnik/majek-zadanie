@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <link rel="stylesheet" href="/dist/css/style.min.css">
     <title>Kontakt</title>
 </head>
 
@@ -45,7 +45,7 @@
                                     placeholder="Dzień dobry..."></textarea>
                             </div>
 
-                            <button class="offer__button">Wyślij</button>
+                            <button class="offer__button" disabled="true">Wyślij</button>
 
                         </form>
 
@@ -55,11 +55,16 @@
             </div>
         </section>
 
+
+
     </main>
 
 
     <!-- @include 'footer.kit' -->
     <script src="/dist/js/main.min.js"></script>
+    <script>
+        contactLink.classList.add('activeLink');
+    </script>
 </body>
 
 </html>
