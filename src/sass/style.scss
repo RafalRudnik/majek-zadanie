@@ -319,6 +319,10 @@ header {
 		padding: 2em 3em;
 		border-radius: 8px;
 		box-shadow: 0 0 10px $greyTxt;
+		transition: box-shadow 0.3s;
+		&:hover {
+			box-shadow: 0 0 22px $greyTxt;
+		}
 		&-title {
 			font-size: 3rem;
 			font-weight: 200;
@@ -393,6 +397,7 @@ header {
 
 .offer_page {
 	min-height: 70vh;
+	padding-top: 10em;
 }
 
 // CONTACT =====================================
@@ -450,6 +455,12 @@ header {
 			input {
 				padding: 0.5em;
 				outline-color: $green;
+			}
+			.input-error {
+				border-bottom: 1px solid tomato;
+			}
+			.input-error placeholder {
+				color: tomato;
 			}
 		}
 		.offer__button {
